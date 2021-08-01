@@ -40,6 +40,8 @@ async def on_message(message: discord.Message):
                 embed = discord.Embed(title="お題", description=f'{theme[B]}', color=0x4169e1)
             await member.send(embed=embed)
     elif message.content.startswith(f"!answer{DEBUG}"):
+        embed = discord.Embed(title="command", description=f'!answer{DEBUG}', color=0x4169e1)
+        await message.channel.send(embed=embed)
         if len(message.content.split(" "))[-1] == "-t":
             embed = discord.Embed(title="お題は…", description=f'{answer[0]}でした！', color=0x4169e1)
             await message.channel.send(embed=embed)
